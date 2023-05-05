@@ -25,9 +25,8 @@ app.UseSwaggerUI(c =>
        c.SwaggerEndpoint("/swagger/v1/swagger.json", "DemoWeb API v1");
    });
 
-app.MapGet("/", () => "Hello World!");
-app.MapGet("/users", async (UsersContext db) => await db.Users.ToListAsync());
-app.MapPost("/adduser", async (UsersContext db, Users user) =>
+app.MapGet("/api/users", async (UsersContext db) => await db.Users.ToListAsync());
+app.MapPost("/api/user/add", async (UsersContext db, Users user) =>
 {
     await db.Users.AddAsync(user);
     await db.SaveChangesAsync();
