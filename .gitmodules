@@ -1,0 +1,4 @@
+[submodule "wwwroot"]
+	path = wwwroot
+	url = https://github.com/wayneao/webtest.git
+	branch = gh-pages
